@@ -76,6 +76,20 @@ AUI.add(
 
 				var comments = A.one('#' + randomId + 'updateComments');
 
+				if (comments && !instance._comments[randomId]) {
+					instance._comments[randomId] = comments;
+				}
+				else if (!comments && instance._comments[randomId]) {
+					comments = instance._comments[randomId];
+				}
+
+				if (content && !instance._content[randomId]) {
+					instance._content[randomId] = content;
+				}
+				else if (!content && title && title.trim().indexOf('Update Due Date') !== -1) {
+					content = instance._content[randomId];
+				}
+
 				if (content) {
 					form.append(content);
 					content.show();
@@ -136,7 +150,10 @@ AUI.add(
 						title: A.Lang.String.escapeHTML(title)
 					}
 				);
-			}
+			},
+
+			_comments: {},
+			_content: {}
 		};
 		Liferay.WorkflowTasks = WorkflowTasks;
 	},
