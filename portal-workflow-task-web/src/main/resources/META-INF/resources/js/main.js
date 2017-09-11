@@ -22,10 +22,10 @@ AUI.add(
 
 				var title = icon.text();
 
-				WorkflowTasks.showPopup(icon.attr('href'), A.one(content), title, randomId, height);
+				WorkflowTasks._showPopup(icon.attr('href'), A.one(content), title, randomId, height);
 			},
 
-			showPopup: function(url, content, title, randomId, height) {
+			_showPopup: function(url, content, title, randomId, height) {
 				var instance = this;
 
 				var form = A.Node.create('<form />');
