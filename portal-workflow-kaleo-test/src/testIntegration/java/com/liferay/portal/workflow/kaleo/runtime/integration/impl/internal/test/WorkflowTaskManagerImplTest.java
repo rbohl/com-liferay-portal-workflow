@@ -31,6 +31,7 @@ import com.liferay.journal.service.JournalArticleLocalServiceUtil;
 import com.liferay.portal.kernel.test.rule.AggregateTestRule;
 import com.liferay.portal.kernel.test.rule.Sync;
 import com.liferay.portal.kernel.test.rule.SynchronousDestinationTestRule;
+import com.liferay.portal.kernel.test.util.RandomTestUtil;
 import com.liferay.portal.kernel.util.Constants;
 import com.liferay.portal.kernel.workflow.WorkflowConstants;
 import com.liferay.portal.kernel.workflow.WorkflowTask;
@@ -339,6 +340,23 @@ public class WorkflowTaskManagerImplTest
 
 		Assert.assertEquals(
 			adminUser.getUserId(), workflowTask.getAssigneeUserId());
+
+		deactivateWorkflow(BlogsEntry.class.getName(), 0, 0);
+	}
+
+	@Test
+	public void testSearchWorkflowTaskByAssetTitle() throws Exception {
+		activateSingleApproverWorkflow(BlogsEntry.class.getName(), 0, 0);
+
+		BlogsEntry blogsEntry = addBlogsEntry();
+
+		int total = searchCount(blogsEntry.getTitle());
+
+		Assert.assertEquals(1, total);
+
+		total = searchCount(RandomTestUtil.randomString());
+
+		Assert.assertEquals(0, total);
 
 		deactivateWorkflow(BlogsEntry.class.getName(), 0, 0);
 	}

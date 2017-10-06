@@ -418,6 +418,12 @@ public abstract class BaseWorkflowTaskManagerTestCase {
 			clazz.getClassLoader(), getBasePath() + fileName);
 	}
 
+	protected int searchCount(String keywords) throws Exception {
+		return WorkflowTaskManagerUtil.searchCount(
+			adminUser.getCompanyId(), adminUser.getUserId(), keywords, null,
+			false, true);
+	}
+
 	protected void setUpUsers() throws Exception {
 		adminUser = createUser(RoleConstants.ADMINISTRATOR);
 
