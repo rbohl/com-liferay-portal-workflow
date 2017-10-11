@@ -24,7 +24,9 @@ String redirect = ParamUtil.getString(request, "redirect");
 String backURL = ParamUtil.getString(request, "backURL", redirect);
 
 if (Validator.isNull(backURL)) {
-	backURL = renderResponse.createRenderURL().toString();
+	PortletURL renderURL = renderResponse.createRenderURL();
+
+	backURL = renderURL.toString();
 }
 
 WorkflowTask workflowTask = workflowTaskDisplayContext.getWorkflowTask();
