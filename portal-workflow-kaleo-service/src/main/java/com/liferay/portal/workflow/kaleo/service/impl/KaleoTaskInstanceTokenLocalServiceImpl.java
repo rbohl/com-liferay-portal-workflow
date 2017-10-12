@@ -507,6 +507,20 @@ public class KaleoTaskInstanceTokenLocalServiceImpl
 	}
 
 	@Override
+	public List<KaleoTaskInstanceToken> search(
+		String taskName, String[] assetTypes, Long[] assetPrimaryKeys,
+		Date dueDateGT, Date dueDateLT, Boolean completed,
+		Boolean searchByUserRoles, boolean andOperator, int start, int end,
+		OrderByComparator<KaleoTaskInstanceToken> orderByComparator,
+		ServiceContext serviceContext) {
+
+		return search(
+			null, taskName, assetTypes, assetPrimaryKeys, dueDateGT, dueDateLT,
+			completed, searchByUserRoles, andOperator, start, end,
+			orderByComparator, serviceContext);
+	}
+
+	@Override
 	public int searchCount(
 		String keywords, Boolean completed, Boolean searchByUserRoles,
 		ServiceContext serviceContext) {
@@ -561,6 +575,18 @@ public class KaleoTaskInstanceTokenLocalServiceImpl
 		return searchCount(
 			keywords, keywords, assetTypes, null, null, null, completed,
 			searchByUserRoles, false, serviceContext);
+	}
+
+	@Override
+	public int searchCount(
+		String taskName, String[] assetTypes, Long[] assetPrimaryKeys,
+		Date dueDateGT, Date dueDateLT, Boolean completed,
+		Boolean searchByUserRoles, boolean andOperator,
+		ServiceContext serviceContext) {
+
+		return searchCount(
+			null, taskName, assetTypes, assetPrimaryKeys, dueDateGT, dueDateLT,
+			completed, searchByUserRoles, andOperator, serviceContext);
 	}
 
 	@Override
