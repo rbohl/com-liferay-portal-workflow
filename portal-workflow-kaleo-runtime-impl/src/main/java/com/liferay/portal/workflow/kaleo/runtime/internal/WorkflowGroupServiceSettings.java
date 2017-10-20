@@ -15,8 +15,8 @@
 package com.liferay.portal.workflow.kaleo.runtime.internal;
 
 import com.liferay.portal.kernel.exception.PortalException;
+import com.liferay.portal.kernel.settings.CompanyServiceSettingsLocator;
 import com.liferay.portal.kernel.settings.FallbackKeys;
-import com.liferay.portal.kernel.settings.GroupServiceSettingsLocator;
 import com.liferay.portal.kernel.settings.Settings;
 import com.liferay.portal.kernel.settings.SettingsFactoryUtil;
 import com.liferay.portal.kernel.settings.TypedSettings;
@@ -30,12 +30,12 @@ import com.liferay.portal.kernel.workflow.WorkflowConstants;
 @Settings.Config(settingsIds = WorkflowConstants.SERVICE_NAME)
 public class WorkflowGroupServiceSettings {
 
-	public static WorkflowGroupServiceSettings getInstance(long groupId)
+	public static WorkflowGroupServiceSettings getInstance(long companyId)
 		throws PortalException {
 
 		Settings settings = SettingsFactoryUtil.getSettings(
-			new GroupServiceSettingsLocator(
-				groupId, WorkflowConstants.SERVICE_NAME));
+			new CompanyServiceSettingsLocator(
+				companyId, WorkflowConstants.SERVICE_NAME));
 
 		return new WorkflowGroupServiceSettings(settings);
 	}

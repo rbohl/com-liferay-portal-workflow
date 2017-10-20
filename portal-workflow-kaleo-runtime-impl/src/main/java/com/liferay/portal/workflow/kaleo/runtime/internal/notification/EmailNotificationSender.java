@@ -71,11 +71,11 @@ public class EmailNotificationSender
 		Map<String, Serializable> workflowContext =
 			executionContext.getWorkflowContext();
 
-		long groupId = GetterUtil.getLong(
-			workflowContext.get(WorkflowConstants.CONTEXT_GROUP_ID));
+		long companyId = GetterUtil.getLong(
+			workflowContext.get(WorkflowConstants.CONTEXT_COMPANY_ID));
 
 		WorkflowGroupServiceSettings workflowGroupServiceSettings =
-			WorkflowGroupServiceSettings.getInstance(groupId);
+			WorkflowGroupServiceSettings.getInstance(companyId);
 
 		String fromAddress = (String)workflowContext.get(
 			WorkflowConstants.CONTEXT_NOTIFICATION_SENDER_ADDRESS);
