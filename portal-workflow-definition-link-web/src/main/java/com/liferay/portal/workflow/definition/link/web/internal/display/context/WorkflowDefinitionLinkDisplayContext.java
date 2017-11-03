@@ -36,6 +36,7 @@ import com.liferay.portal.kernel.util.OrderByComparator;
 import com.liferay.portal.kernel.util.ParamUtil;
 import com.liferay.portal.kernel.util.PortalUtil;
 import com.liferay.portal.kernel.util.PredicateFilter;
+import com.liferay.portal.kernel.util.StringBundler;
 import com.liferay.portal.kernel.util.StringPool;
 import com.liferay.portal.kernel.util.Validator;
 import com.liferay.portal.kernel.workflow.WorkflowConstants;
@@ -268,7 +269,8 @@ public class WorkflowDefinitionLinkDisplayContext {
 			_workflowDefinitionLinkRequestHelper.getLocale(), "version-x",
 			workflowDefinition.getVersion(), false);
 
-		return workflowDefinitionName + " (" + workflowDefinitionVersion + ")";
+		return StringBundler.concat(
+			workflowDefinitionName, " (", workflowDefinitionVersion, ")");
 	}
 
 	public List<WorkflowDefinition> getWorkflowDefinitions()
