@@ -19,7 +19,6 @@ import aQute.bnd.annotation.ProviderType;
 import com.liferay.portal.kernel.model.CacheModel;
 import com.liferay.portal.kernel.util.HashUtil;
 import com.liferay.portal.kernel.util.StringBundler;
-import com.liferay.portal.kernel.util.StringPool;
 import com.liferay.portal.workflow.kaleo.model.KaleoDefinition;
 
 import java.io.Externalizable;
@@ -110,7 +109,7 @@ public class KaleoDefinitionCacheModel implements CacheModel<KaleoDefinition>,
 		kaleoDefinitionImpl.setUserId(userId);
 
 		if (userName == null) {
-			kaleoDefinitionImpl.setUserName(StringPool.BLANK);
+			kaleoDefinitionImpl.setUserName("");
 		}
 		else {
 			kaleoDefinitionImpl.setUserName(userName);
@@ -131,28 +130,28 @@ public class KaleoDefinitionCacheModel implements CacheModel<KaleoDefinition>,
 		}
 
 		if (name == null) {
-			kaleoDefinitionImpl.setName(StringPool.BLANK);
+			kaleoDefinitionImpl.setName("");
 		}
 		else {
 			kaleoDefinitionImpl.setName(name);
 		}
 
 		if (title == null) {
-			kaleoDefinitionImpl.setTitle(StringPool.BLANK);
+			kaleoDefinitionImpl.setTitle("");
 		}
 		else {
 			kaleoDefinitionImpl.setTitle(title);
 		}
 
 		if (description == null) {
-			kaleoDefinitionImpl.setDescription(StringPool.BLANK);
+			kaleoDefinitionImpl.setDescription("");
 		}
 		else {
 			kaleoDefinitionImpl.setDescription(description);
 		}
 
 		if (content == null) {
-			kaleoDefinitionImpl.setContent(StringPool.BLANK);
+			kaleoDefinitionImpl.setContent("");
 		}
 		else {
 			kaleoDefinitionImpl.setContent(content);
@@ -203,7 +202,7 @@ public class KaleoDefinitionCacheModel implements CacheModel<KaleoDefinition>,
 		objectOutput.writeLong(userId);
 
 		if (userName == null) {
-			objectOutput.writeUTF(StringPool.BLANK);
+			objectOutput.writeUTF("");
 		}
 		else {
 			objectOutput.writeUTF(userName);
@@ -213,28 +212,28 @@ public class KaleoDefinitionCacheModel implements CacheModel<KaleoDefinition>,
 		objectOutput.writeLong(modifiedDate);
 
 		if (name == null) {
-			objectOutput.writeUTF(StringPool.BLANK);
+			objectOutput.writeUTF("");
 		}
 		else {
 			objectOutput.writeUTF(name);
 		}
 
 		if (title == null) {
-			objectOutput.writeUTF(StringPool.BLANK);
+			objectOutput.writeUTF("");
 		}
 		else {
 			objectOutput.writeUTF(title);
 		}
 
 		if (description == null) {
-			objectOutput.writeUTF(StringPool.BLANK);
+			objectOutput.writeUTF("");
 		}
 		else {
 			objectOutput.writeUTF(description);
 		}
 
 		if (content == null) {
-			objectOutput.writeUTF(StringPool.BLANK);
+			objectOutput.writeUTF("");
 		}
 		else {
 			objectOutput.writeUTF(content);

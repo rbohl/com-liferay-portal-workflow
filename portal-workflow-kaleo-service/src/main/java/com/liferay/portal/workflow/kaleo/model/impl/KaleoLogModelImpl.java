@@ -29,7 +29,6 @@ import com.liferay.portal.kernel.service.UserLocalServiceUtil;
 import com.liferay.portal.kernel.util.GetterUtil;
 import com.liferay.portal.kernel.util.ProxyUtil;
 import com.liferay.portal.kernel.util.StringBundler;
-import com.liferay.portal.kernel.util.StringPool;
 import com.liferay.portal.workflow.kaleo.model.KaleoLog;
 import com.liferay.portal.workflow.kaleo.model.KaleoLogModel;
 
@@ -485,7 +484,7 @@ public class KaleoLogModelImpl extends BaseModelImpl<KaleoLog>
 			return user.getUuid();
 		}
 		catch (PortalException pe) {
-			return StringPool.BLANK;
+			return "";
 		}
 	}
 
@@ -496,7 +495,7 @@ public class KaleoLogModelImpl extends BaseModelImpl<KaleoLog>
 	@Override
 	public String getUserName() {
 		if (_userName == null) {
-			return StringPool.BLANK;
+			return "";
 		}
 		else {
 			return _userName;
@@ -537,7 +536,7 @@ public class KaleoLogModelImpl extends BaseModelImpl<KaleoLog>
 	@Override
 	public String getKaleoClassName() {
 		if (_kaleoClassName == null) {
-			return StringPool.BLANK;
+			return "";
 		}
 		else {
 			return _kaleoClassName;
@@ -672,7 +671,7 @@ public class KaleoLogModelImpl extends BaseModelImpl<KaleoLog>
 	@Override
 	public String getKaleoNodeName() {
 		if (_kaleoNodeName == null) {
-			return StringPool.BLANK;
+			return "";
 		}
 		else {
 			return _kaleoNodeName;
@@ -712,7 +711,7 @@ public class KaleoLogModelImpl extends BaseModelImpl<KaleoLog>
 	@Override
 	public String getKaleoActionName() {
 		if (_kaleoActionName == null) {
-			return StringPool.BLANK;
+			return "";
 		}
 		else {
 			return _kaleoActionName;
@@ -727,7 +726,7 @@ public class KaleoLogModelImpl extends BaseModelImpl<KaleoLog>
 	@Override
 	public String getKaleoActionDescription() {
 		if (_kaleoActionDescription == null) {
-			return StringPool.BLANK;
+			return "";
 		}
 		else {
 			return _kaleoActionDescription;
@@ -752,7 +751,7 @@ public class KaleoLogModelImpl extends BaseModelImpl<KaleoLog>
 	@Override
 	public String getPreviousKaleoNodeName() {
 		if (_previousKaleoNodeName == null) {
-			return StringPool.BLANK;
+			return "";
 		}
 		else {
 			return _previousKaleoNodeName;
@@ -767,7 +766,7 @@ public class KaleoLogModelImpl extends BaseModelImpl<KaleoLog>
 	@Override
 	public String getPreviousAssigneeClassName() {
 		if (_previousAssigneeClassName == null) {
-			return StringPool.BLANK;
+			return "";
 		}
 		else {
 			return _previousAssigneeClassName;
@@ -792,7 +791,7 @@ public class KaleoLogModelImpl extends BaseModelImpl<KaleoLog>
 	@Override
 	public String getCurrentAssigneeClassName() {
 		if (_currentAssigneeClassName == null) {
-			return StringPool.BLANK;
+			return "";
 		}
 		else {
 			return _currentAssigneeClassName;
@@ -817,7 +816,7 @@ public class KaleoLogModelImpl extends BaseModelImpl<KaleoLog>
 	@Override
 	public String getType() {
 		if (_type == null) {
-			return StringPool.BLANK;
+			return "";
 		}
 		else {
 			return _type;
@@ -842,7 +841,7 @@ public class KaleoLogModelImpl extends BaseModelImpl<KaleoLog>
 	@Override
 	public String getComment() {
 		if (_comment == null) {
-			return StringPool.BLANK;
+			return "";
 		}
 		else {
 			return _comment;
@@ -887,7 +886,7 @@ public class KaleoLogModelImpl extends BaseModelImpl<KaleoLog>
 	@Override
 	public String getWorkflowContext() {
 		if (_workflowContext == null) {
-			return StringPool.BLANK;
+			return "";
 		}
 		else {
 			return _workflowContext;

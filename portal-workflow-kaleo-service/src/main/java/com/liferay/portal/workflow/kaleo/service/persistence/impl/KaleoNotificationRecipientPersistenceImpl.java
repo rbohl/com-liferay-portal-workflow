@@ -32,7 +32,6 @@ import com.liferay.portal.kernel.service.persistence.CompanyProviderWrapper;
 import com.liferay.portal.kernel.service.persistence.impl.BasePersistenceImpl;
 import com.liferay.portal.kernel.util.OrderByComparator;
 import com.liferay.portal.kernel.util.StringBundler;
-import com.liferay.portal.kernel.util.StringPool;
 import com.liferay.portal.spring.extender.service.ServiceReference;
 import com.liferay.portal.workflow.kaleo.exception.NoSuchNotificationRecipientException;
 import com.liferay.portal.workflow.kaleo.model.KaleoNotificationRecipient;
@@ -306,7 +305,7 @@ public class KaleoNotificationRecipientPersistenceImpl
 		msg.append("companyId=");
 		msg.append(companyId);
 
-		msg.append(StringPool.CLOSE_CURLY_BRACE);
+		msg.append("}");
 
 		throw new NoSuchNotificationRecipientException(msg.toString());
 	}
@@ -357,7 +356,7 @@ public class KaleoNotificationRecipientPersistenceImpl
 		msg.append("companyId=");
 		msg.append(companyId);
 
-		msg.append(StringPool.CLOSE_CURLY_BRACE);
+		msg.append("}");
 
 		throw new NoSuchNotificationRecipientException(msg.toString());
 	}
@@ -828,7 +827,7 @@ public class KaleoNotificationRecipientPersistenceImpl
 		msg.append("kaleoDefinitionId=");
 		msg.append(kaleoDefinitionId);
 
-		msg.append(StringPool.CLOSE_CURLY_BRACE);
+		msg.append("}");
 
 		throw new NoSuchNotificationRecipientException(msg.toString());
 	}
@@ -881,7 +880,7 @@ public class KaleoNotificationRecipientPersistenceImpl
 		msg.append("kaleoDefinitionId=");
 		msg.append(kaleoDefinitionId);
 
-		msg.append(StringPool.CLOSE_CURLY_BRACE);
+		msg.append("}");
 
 		throw new NoSuchNotificationRecipientException(msg.toString());
 	}
@@ -1355,7 +1354,7 @@ public class KaleoNotificationRecipientPersistenceImpl
 		msg.append("kaleoNotificationId=");
 		msg.append(kaleoNotificationId);
 
-		msg.append(StringPool.CLOSE_CURLY_BRACE);
+		msg.append("}");
 
 		throw new NoSuchNotificationRecipientException(msg.toString());
 	}
@@ -1408,7 +1407,7 @@ public class KaleoNotificationRecipientPersistenceImpl
 		msg.append("kaleoNotificationId=");
 		msg.append(kaleoNotificationId);
 
-		msg.append(StringPool.CLOSE_CURLY_BRACE);
+		msg.append("}");
 
 		throw new NoSuchNotificationRecipientException(msg.toString());
 	}
@@ -2201,12 +2200,12 @@ public class KaleoNotificationRecipientPersistenceImpl
 		for (Serializable primaryKey : uncachedPrimaryKeys) {
 			query.append((long)primaryKey);
 
-			query.append(StringPool.COMMA);
+			query.append(",");
 		}
 
 		query.setIndex(query.index() - 1);
 
-		query.append(StringPool.CLOSE_PARENTHESIS);
+		query.append(")");
 
 		String sql = query.toString();
 

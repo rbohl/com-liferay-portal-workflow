@@ -29,7 +29,6 @@ import com.liferay.portal.kernel.service.UserLocalServiceUtil;
 import com.liferay.portal.kernel.util.GetterUtil;
 import com.liferay.portal.kernel.util.ProxyUtil;
 import com.liferay.portal.kernel.util.StringBundler;
-import com.liferay.portal.kernel.util.StringPool;
 import com.liferay.portal.workflow.kaleo.model.KaleoInstance;
 import com.liferay.portal.workflow.kaleo.model.KaleoInstanceModel;
 
@@ -363,7 +362,7 @@ public class KaleoInstanceModelImpl extends BaseModelImpl<KaleoInstance>
 			return user.getUuid();
 		}
 		catch (PortalException pe) {
-			return StringPool.BLANK;
+			return "";
 		}
 	}
 
@@ -378,7 +377,7 @@ public class KaleoInstanceModelImpl extends BaseModelImpl<KaleoInstance>
 	@Override
 	public String getUserName() {
 		if (_userName == null) {
-			return StringPool.BLANK;
+			return "";
 		}
 		else {
 			return _userName;
@@ -441,7 +440,7 @@ public class KaleoInstanceModelImpl extends BaseModelImpl<KaleoInstance>
 	@Override
 	public String getKaleoDefinitionName() {
 		if (_kaleoDefinitionName == null) {
-			return StringPool.BLANK;
+			return "";
 		}
 		else {
 			return _kaleoDefinitionName;
@@ -498,7 +497,7 @@ public class KaleoInstanceModelImpl extends BaseModelImpl<KaleoInstance>
 	@Override
 	public String getClassName() {
 		if (_className == null) {
-			return StringPool.BLANK;
+			return "";
 		}
 		else {
 			return _className;
@@ -592,7 +591,7 @@ public class KaleoInstanceModelImpl extends BaseModelImpl<KaleoInstance>
 	@Override
 	public String getWorkflowContext() {
 		if (_workflowContext == null) {
-			return StringPool.BLANK;
+			return "";
 		}
 		else {
 			return _workflowContext;
